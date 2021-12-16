@@ -1,0 +1,59 @@
+class BasePasswordManager:
+
+    old_passwords = ["sinchana@1234", "12345", "Cinchona", "sinchana@1234"]
+
+    def get_password(self):
+        current_password = self.old_passwords[-1]
+        return current_password
+
+    def is_correct(self, password):
+        if self.old_passwords[-1] == password:
+            return True
+        else:
+            return False
+
+
+pm = BasePasswordManager()
+
+
+class PasswordManager1(BasePasswordManager):
+    def get_level(self,password):
+        if password.isalpha() or password.isnumeric():
+            a = 0
+            print("level",  a)
+            return a
+        elif password.isalnum():
+            b = 1
+            print("level", b)
+            return b
+        else:
+            c = 2
+            print("level", c)
+            return c
+
+    def set_password(self, password):
+        current_password = self.get_password()
+        if len(password) >= 6 and self.get_level(password) >=self.get_level(current_password):
+            self.old_passwords.append(password)
+            print("password is successfully changed")
+        else:
+            print("password is not changed")
+
+
+pm1 = PasswordManager1()
+d = pm1.get_password()
+print(pm1.get_password())
+print(pm1.is_correct("sinchana@1234"))
+pm1.get_level(d)
+pm1.set_password("Cinchona")
+pm1.set_password("sinchana@567")
+print(pm1.old_passwords)
+
+
+
+
+
+
+
+
+
