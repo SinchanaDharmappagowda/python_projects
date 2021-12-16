@@ -1,0 +1,9 @@
+Password_manager- sinchana
+
+In this source code we will validate the password whether it is strong or not by checking its level
+
+1.Assign some password
+2.Validate the password
+3.Password contain both alphabet and number it level is 2
+4.Password contain only number or only alphabet it level is 1
+5.New password append
